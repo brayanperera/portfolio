@@ -2,14 +2,14 @@
 
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-import { engagementTypes, type ContactResponse } from "@/lib/contact-schema";
+import { engagementTypes, type ContactResponse } from "@/lib/contact-types";
 import { cn } from "@/lib/utils";
 
 type FormState =
   { status: "idle" | "submitting" | "success" } | { status: "error"; message: string };
 
 const inputClass =
-  "mt-1.5 block min-h-11 w-full rounded-md border border-border-strong bg-surface-2 px-3 py-2 text-base outline-none transition-colors duration-150 focus:border-accent focus-visible:outline-2 focus-visible:outline-accent aria-invalid:border-danger sm:text-sm";
+  "mt-1.5 block min-h-11 w-full rounded-md border border-border-strong bg-surface-2 px-3 py-2 text-base transition-colors duration-150 focus:border-accent aria-invalid:border-danger sm:text-sm";
 
 function Field({
   name,

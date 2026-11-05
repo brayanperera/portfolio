@@ -165,7 +165,8 @@ export function Diagram({ name }: { name: string }) {
         })}
       </svg>
       <figcaption className="mt-3 font-mono text-xs text-muted">
-        Simplified view. <span className="text-accent">Green</span> marks the parts I built.
+        Simplified view. <span className="text-accent">Highlighted</span> boxes are the parts I
+        built.
       </figcaption>
     </figure>
   );

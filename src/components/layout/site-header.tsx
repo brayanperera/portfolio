@@ -16,9 +16,8 @@ function useActiveSection(enabled: boolean) {
 
   useEffect(() => {
     if (!enabled) return;
-    const sections = navItems
-      .map((item) => document.getElementById(item.section))
-      .filter((el): el is HTMLElement => el !== null);
+    // Every section, not just nav targets, so the highlight clears over Skills and the like.
+    const sections = document.querySelectorAll("main section[id]");
 
     const observer = new IntersectionObserver(
       (entries) => {

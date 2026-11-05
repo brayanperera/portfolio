@@ -5,7 +5,8 @@ import {
   ContactNotificationEmail,
 } from "@/components/email/contact-emails";
 import { profile } from "@/content";
-import { contactSchema, type ContactResponse } from "@/lib/contact-schema";
+import { contactSchema } from "@/lib/contact-schema";
+import type { ContactResponse } from "@/lib/contact-types";
 import { isRateLimited } from "@/lib/rate-limit";
 
 function respond(body: ContactResponse, status = 200) {

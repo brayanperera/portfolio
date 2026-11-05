@@ -1,6 +1,5 @@
 import { z } from "zod";
-
-export const engagementTypes = ["Architecture", "SRE-DevOps", "Product build", "Other"] as const;
+import { engagementTypes } from "./contact-types";
 
 export const contactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name.").max(100),
@@ -17,6 +16,3 @@ export const contactSchema = z.object({
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;
-
-export type ContactResponse =
-  { ok: true } | { ok: false; error: string; fieldErrors?: Record<string, string> };
