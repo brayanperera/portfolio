@@ -11,7 +11,7 @@ export type * from "./types";
 
 const CAREER_START_YEAR = 2008;
 
-/** Years since the first role. Note that the published "13+" stat comes from profile.ts. */
+/** Years since the first role. Note that the published "18+" stat comes from profile.ts. */
 export function yearsOfExperience(now: Date = new Date()): number {
   return now.getFullYear() - CAREER_START_YEAR;
 }

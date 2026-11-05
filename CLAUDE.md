@@ -1,11 +1,11 @@
 # CLAUDE.md — brayanperera.cyou
 
-Personal portfolio for **Brayan Perera**: Systems Architect / SRE (13+ yrs) and founder of **Aakasa Digital**.
+Personal portfolio for **Brayan Perera**: Systems Architect / SRE (18+ yrs) and founder of **Aakasa Digital**.
 Domain: `brayanperera.cyou` · Host: **Vercel** · Repo owner: Brayan.
 
 ## Positioning (read before writing any copy)
 Hybrid story: **"Architect who ships products."**
-1. Primary: senior cloud/systems architect and SRE. 13+ years in telecom, healthcare and banking. Covers AWS/EKS, Kubernetes, Terraform, OpenStack/NFV and Linux.
+1. Primary: senior cloud/systems architect and SRE. 18+ years in telecom, healthcare and banking. Covers AWS/EKS, Kubernetes, Terraform, OpenStack/NFV and Linux.
 2. Proof: founder of Aakasa Digital, building and running his own SaaS products end-to-end with AI-assisted development (Claude Code).
 Tone: confident, technical, concise. No buzzword soup, no fake metrics. Use real numbers only from `content/`.
 

@@ -21,7 +21,7 @@ export const profile: Profile = {
     // TODO(brayan): add X/Twitter URL
   ],
   shortBio:
-    "Systems architect and site reliability engineer with 13+ years building highly available platforms for telecom, healthcare and banking — from OpenStack private clouds and NFV platforms to AWS EKS. Today I also build and run my own SaaS products under Aakasa Digital.",
+    "Systems architect and site reliability engineer with 18+ years building highly available platforms for telecom, healthcare and banking — from OpenStack private clouds and NFV platforms to AWS EKS. Today I also build and run my own SaaS products under Aakasa Digital.",
   valueProp: "I design resilient cloud platforms — and ship products on them.",
   narrative: [
     "I started in telecom as an implementation engineer at hSenid Mobile Solutions, deploying mobile recharge and messaging platforms for operators in multiple countries. That meant 1.5 years onsite in Brunei, then 3.5 years onsite with a leading Singapore mobile operator, working on SMSC, USSDC, SMPP, Sigtran and HLR provisioning.",
@@ -38,7 +38,7 @@ export const profile: Profile = {
 
 /** Hero stats. Products shipped stays out until confirmed. */
 export const stats: Stat[] = [
-  { value: 13, suffix: "+", label: "years experience" },
+  { value: 18, suffix: "+", label: "years experience" },
   { value: certifications.length, label: "certifications" },
   { value: 30, suffix: "+", label: "clinics migrated to AWS Fargate" },
   // TODO(brayan): add "products shipped" once the number is confirmed
