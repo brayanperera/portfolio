@@ -92,9 +92,8 @@ export function CommandPalette({
         group: "Actions",
         label: "Download CV",
         icon: <Download aria-hidden="true" className={iconClass} />,
-        run: () => {
-          window.location.href = "/cv.pdf";
-        },
+        // A file download, not a page, so it must bypass the client router.
+        run: () => void window.open("/cv.pdf", "_self"),
       },
       ...data.socials.map((social) => ({
         id: `social-${social.label}`,
