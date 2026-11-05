@@ -30,7 +30,7 @@ export const careerProjects: CareerProject[] = [
     period: null,
     problem: "An ETSI NFV MANO deployment needed an element management platform.",
     approach: [
-      "Acted as architect, tech lead and principal developer of a Python Flask platform.",
+      "Led the design and development of a Python Flask platform.",
       "Built 5 of the 12 microservices: lifecycle manager, service manager, patch framework, VNF indicator manager and local SSL CA issuer.",
     ],
     stack: ["Python", "Flask", "Microservices"],

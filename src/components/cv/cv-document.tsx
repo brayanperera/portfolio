@@ -40,8 +40,9 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
     paddingHorizontal: 46,
   },
-  name: { fontSize: 20, fontWeight: 600 },
-  title: { fontSize: 10.5, marginTop: 2 },
+  // Line height is explicit: the inherited multiplier makes this large text overlap the next line.
+  name: { fontSize: 20, fontWeight: 600, lineHeight: 1.25, marginBottom: 6 },
+  title: { fontSize: 10.5 },
   contact: { color: muted, marginTop: 4 },
   link: { color: link, textDecoration: "none" },
   sectionTitle: {
@@ -155,10 +156,10 @@ export function CvDocument() {
         <CvSection title="Selected projects">
           {getFeaturedProjects().map((project) => (
             <View key={project.slug} style={[styles.entry, { marginBottom: 5 }]} wrap={false}>
-              <Text style={styles.bold}>{plain(project.name)}</Text>
               <Text>
-                {project.role}. {plain(project.approach.join(" "))}
+                <Text style={styles.bold}>{plain(project.name)}</Text>, {project.role}
               </Text>
+              <Text>{plain(project.approach.join(" "))}</Text>
             </View>
           ))}
         </CvSection>
