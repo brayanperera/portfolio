@@ -1,6 +1,7 @@
 import { About } from "@/components/home/about";
 import { CaseStudies } from "@/components/home/case-studies";
 import { Certifications } from "@/components/home/certifications";
+import { Contact } from "@/components/home/contact";
 import { Experience } from "@/components/home/experience";
 import { Hero } from "@/components/home/hero";
 import { Products } from "@/components/home/products";
@@ -35,6 +36,7 @@ export default function HomePage() {
           </div>
         ) : null}
       </Section>
+      <Contact />
     </main>
   );
 }
