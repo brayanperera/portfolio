@@ -1,6 +1,5 @@
+import type { Status } from "@/content/types";
 import { cn } from "@/lib/utils";
-
-export type Status = "running" | "beta" | "building" | "archived";
 
 const styles: Record<Status, string> = {
   running: "text-success",
