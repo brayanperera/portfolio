@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MdxContent } from "@/components/mdx/mdx-content";
+import { PostJsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";
 import { formatDate, getAllPosts, getPost, getToc } from "@/lib/posts";
 import { cn } from "@/lib/utils";
@@ -37,6 +38,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <main id="main" className="py-14 sm:py-20">
+      <PostJsonLd post={post} />
       <Container>
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_14rem]">
           <article className="max-w-3xl min-w-0">

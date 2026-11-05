@@ -10,6 +10,7 @@ import { TerminalWindow } from "@/components/ui/terminal-window";
 export const metadata: Metadata = {
   title: "Styleguide",
   robots: { index: false, follow: false },
+  alternates: { canonical: null },
 };
 
 const tokens = [

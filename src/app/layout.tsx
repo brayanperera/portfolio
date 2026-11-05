@@ -7,6 +7,7 @@ import { CursorGlow } from "@/components/layout/cursor-glow";
 import { MotionProvider } from "@/components/layout/motion-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { SiteJsonLd } from "@/components/seo/json-ld";
 import { profile } from "@/content";
 import { getAllPosts } from "@/lib/posts";
 import "./globals.css";
@@ -18,8 +19,26 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
+const description = `${profile.title}. ${profile.valueProp}`;
+
 export const metadata: Metadata = {
-  title: profile.name,
+  metadataBase: new URL(profile.url),
+  title: { default: `${profile.name} · ${profile.title}`, template: `%s · ${profile.name}` },
+  description,
+  authors: [{ name: profile.name, url: profile.url }],
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": [{ url: "/rss.xml", title: `${profile.name} blog` }] },
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: profile.name,
+    title: profile.name,
+    description,
+    locale: "en",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -49,6 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="flex-1">{children}</div>
           <SiteFooter />
         </MotionProvider>
+        <SiteJsonLd />
         <Analytics />
         <SpeedInsights />
       </body>
