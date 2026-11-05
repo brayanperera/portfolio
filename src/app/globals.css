@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Dark is the only theme for now; a light theme only has to
+ * redefine this block under :root[data-theme="light"].
+ * To change the signal colour, edit --accent and --accent-rgb.
+ */
+:root {
+  color-scheme: dark;
+
+  --bg: #0a0b0d;
+  --surface: #111317;
+  --surface-2: #181b21;
+  --border: rgb(255 255 255 / 8%);
+  --border-strong: rgb(255 255 255 / 16%);
+  --text: #e8eaed;
+  --text-muted: #9ba3af;
+
+  --accent-rgb: 61 220 132;
+  --accent: rgb(var(--accent-rgb));
+  --accent-muted: rgb(var(--accent-rgb) / 12%);
+  --accent-contrast: #06130c;
+
+  --success: #3ddc84;
+  --warning: #f5b84a;
+  --danger: #ff7b72;
+  --info: #67c7f5;
+
+  --dot: rgb(255 255 255 / 7%);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "Cascadia Code", Menlo, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: rgb(var(--accent-rgb) / 30%);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  button,
+  summary,
+  select {
+    cursor: pointer;
+  }
+
+  dialog {
+    color: inherit;
+    margin: 0;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+/* Global background: dot grid, plus a glow that CursorGlow moves on fine pointers. */
+.bg-dots {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, rgb(0 0 0 / 35%));
+}
+
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--glow-x, 70%) var(--glow-y, 10%),
+    rgb(var(--accent-rgb) / 7%),
+    transparent 70%
+  );
+}
+
+/* Blinking prompt cursor */
+.cursor-blink {
+  animation: blink 1.1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Card hover glow */
+.card-glow {
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card-glow:hover,
+.card-glow:focus-within {
+  border-color: rgb(var(--accent-rgb) / 35%);
+  box-shadow: 0 0 28px -8px rgb(var(--accent-rgb) / 30%);
+}
+
+/* details/summary used by the experience log */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] > summary .chevron {
+  transform: rotate(90deg);
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 65%);
+  backdrop-filter: blur(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .cursor-blink {
+    animation: none;
+  }
+}
