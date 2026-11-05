@@ -274,3 +274,11 @@ dialog::backdrop {
 .prose-body pre [data-highlighted-line] {
   background: var(--accent-muted);
 }
+
+.prose-body aside p {
+  margin: 0;
+}
+
+.prose-body aside p + p {
+  margin-top: 0.25rem;
+}
